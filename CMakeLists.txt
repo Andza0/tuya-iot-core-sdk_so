@@ -23,6 +23,9 @@ if( ${PROJECT_SOURCE_DIR} STREQUAL ${PROJECT_BINARY_DIR} )
     message( FATAL_ERROR "In-source build is not allowed. Please build in a separate directory, such as ${PROJECT_SOURCE_DIR}/build." )
 endif()
 
+#Set for shared libraries
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 # Set global path variables.
 get_filename_component(__root_dir "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
 set(ROOT_DIR ${__root_dir} CACHE INTERNAL "C SDK source root.")
